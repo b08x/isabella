@@ -10,6 +10,10 @@ Once that's done, just `bundle install` to install the relevant Ruby libraries.
 
 ## Configuration
 
+http://www.speech.cs.cmu.edu/tools/lmtool-new.html
+
+https://cmusphinx.github.io/wiki/tutorialadapt/
+
 This is more complicated than it should be. For speech recognition, we have three different files:
 
 ### `config/commands.yml`

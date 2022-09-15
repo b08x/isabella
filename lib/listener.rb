@@ -19,9 +19,16 @@ class Listener
 
     sphinx_config = Pocketsphinx::Configuration::Grammar.new FILES[:grammar]
     sphinx_config['dict'] = FILES[:dictionary]
-    # Higher number means it takes more volume, before we check for a command
     sphinx_config['vad_threshold'] = 3
-
+    #Automatic gain control for c0 ('max', 'emax', 'noise', or 'none')
+    sphinx_config['agc'] = "none"
+    #Model definition input file
+    # sphinx_config['mdef'] = "none"
+    #Directory containing acoustic model files
+    # sphinx_config['hmm'] = "none"
+    sphinx_config['debug'] = 1
+    sphinx_config['backtrace'] = "yes"
+    sphinx_config['samprate'] = 16000
     @recognizer = Pocketsphinx::LiveSpeechRecognizer.new(sphinx_config)
   end
 
